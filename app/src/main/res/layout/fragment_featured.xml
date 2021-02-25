@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeaturedFragment">
+
+    <LinearLayout
+        style="@style/Widget.Shrine.Backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp">
+
+        <include layout="@layout/shr_backdrop" />
+    </LinearLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar"
+            style="@style/Widget.Shrine.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/shr_branded_menu"
+            app:title="@string/calibration_admittance" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:background="@color/productGridBackgroundColor"
+        android:elevation="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <Button
+                    android:id="@+id/command_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/commandText"
+                    android:backgroundTint="@color/toggle_button"
+                    android:textColor="@color/toggle_text"
+                    app:icon="@drawable/ic_record_voice_over_black_18dp"
+                    app:iconTint="@color/icon_button"/>
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/command_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/commandPlaceholder"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/toggle_button"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/test_menu"
+                style="@style/DOFSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/defaultText"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/command_text">
+
+                <AutoCompleteTextView
+                    android:id="@+id/textField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:hint="@string/defaultText"
+                    android:textColor="@color/test"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/up_down_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/test_menu">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/up_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_circle_up_black_18dp"
+                    style="@style/IconOnlyButton"
+                    android:layout_weight="1.0"
+                    />
+
+                <TextView
+                    android:id="@+id/forceNum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1.0"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/down_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_arrow_circle_down_black_18dp"
+                    style="@style/IconOnlyButton"
+                    android:layout_weight="1.0"
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/stop_Button"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/up_down_container"
+                android:text="@string/stop"
+                style="@style/StopButton"/>
+
+            <LinearLayout
+                android:id="@+id/utility_buttons_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/stop_Button">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/reset_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_cancel_black_18dp"
+                    style="@style/IconOnlyButton"
+                    android:layout_weight="1.0"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/undo_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_undo_black_18dp"
+                    style="@style/IconOnlyButton"
+                    android:layout_weight="1.0"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_save_black_18dp"
+                    style="@style/IconOnlyButton"
+                    android:layout_weight="1.0"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
