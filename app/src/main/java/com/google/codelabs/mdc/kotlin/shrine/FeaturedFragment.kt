@@ -1,6 +1,8 @@
 package com.google.codelabs.mdc.kotlin.shrine
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.ArrayAdapter
@@ -61,11 +63,16 @@ class FeaturedFragment : Fragment() {
 
         val snackBarView = view.snackbar_view
         view.save_button.setOnClickListener {
-            Snackbar.make(snackBarView, "Saved", Snackbar.LENGTH_SHORT)
-                    .setAction("Dismiss") {
+            view.save_progress.visibility = View.VISIBLE
+            val saveHandler = Handler(Looper.getMainLooper())
+            saveHandler.postDelayed({
+                Snackbar.make(snackBarView, "Saved", Snackbar.LENGTH_SHORT)
+                        .setAction("Dismiss") {
 
-                    }
-                    .show()
+                        }
+                        .show()
+                view.save_progress.visibility = View.INVISIBLE
+            }, 3000)
         }
 
         return view
