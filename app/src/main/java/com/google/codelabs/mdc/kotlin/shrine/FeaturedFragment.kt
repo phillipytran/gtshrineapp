@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_featured.view.*
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
 import timber.log.Timber
@@ -56,6 +57,15 @@ class FeaturedFragment : Fragment() {
 
         view.down_button.setOnClickListener {
             Timber.d("Close button pressed")
+        }
+
+        val snackBarView = view.snackbar_view
+        view.save_button.setOnClickListener {
+            Snackbar.make(snackBarView, "Saved", Snackbar.LENGTH_SHORT)
+                    .setAction("Dismiss") {
+
+                    }
+                    .show()
         }
 
         return view

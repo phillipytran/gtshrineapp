@@ -49,14 +49,21 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:paddingTop="0dp"
             android:paddingBottom="20dp">
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                style="@style/SaveProgressIndicator" />
 
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/toggle_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true">
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp">
 
                 <Button
                     android:id="@+id/command_button"
@@ -184,6 +191,13 @@
                     />
 
             </LinearLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/snackbar_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingBottom="16dp"
+                android:layout_alignParentBottom="true"/>
 
         </RelativeLayout>
 
