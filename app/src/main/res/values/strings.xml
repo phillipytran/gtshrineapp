@@ -37,6 +37,7 @@
     <string name="close">Close</string>
     <string name="DOFs">Degrees of Freedom</string>
     <string name="home_pos_button">Home Position</string>
-    <string name="welcome">Welcome, </string>
+    <string name="welcome">Welcome!</string>
+
 
 </resources>

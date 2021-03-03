@@ -36,7 +36,7 @@ class FeaturedFragment : Fragment() {
                 ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
 
-        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb CMC", "Thumb MCP")
+        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb CMC", "Thumb")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
         view.textField.setAdapter(adapter)
 

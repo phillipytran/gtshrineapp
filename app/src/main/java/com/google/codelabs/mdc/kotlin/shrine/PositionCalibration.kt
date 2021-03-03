@@ -44,7 +44,7 @@ class PositionCalibration : Fragment() {
                 ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_2), // Menu open icon
                 ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
-        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb CMC", "Thumb MCP", "Index Ext", "Middle Ext", "Thumb CMC Ext", "Thumb Ext")
+        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb Abduction", "Thumb Flex", "Index Ext", "Middle Ext", "Thumb Adduction", "Thumb Ext")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
         view.textField.setAdapter(adapter)
 
