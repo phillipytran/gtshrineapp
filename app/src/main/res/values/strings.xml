@@ -1,9 +1,10 @@
 <resources>
-    <string name="shr_app_name">Shrine</string>
+    <string name="gt_app_name">FLEXotendon</string>
     <string name="shr_hint_username">Username</string>
     <string name="shr_hint_password">Password</string>
-    <string name="shr_button_next">Next</string>
-    <string name="shr_button_cancel">Cancel</string>
+    <string name="shr_button_next">Login</string>
+    <string name="shr_button_register">Register</string>
+    <string name="reset_text_button">Clear</string>
     <string name="shr_error_password">Password must contain at least 8 characters.</string>
     <string name="shr_filter_title">Filter</string>
     <string name="shr_search_title">Search</string>
@@ -19,11 +20,11 @@
     <string name="shr_bottoms_label">Bottoms</string>
     <string name="shr_dresses_label">Dresses</string>
     <string name="shr_account_label">My Account</string>
-    <string name="shr_logo_content_description">Shrine Logo</string>
+    <string name="gt_logo_content_description">GT Logo</string>
 
     <string name="defaultText">Test</string>
     <string name="commandText">Command</string>
-    <string name="commandPlaceholder">Your command here</string>
+    <string name="commandPlaceholder">Say a command</string>
     <string name="zero">0</string>
     <string name="stop">STOP</string>
     <string name="checked">Checked</string>
@@ -32,4 +33,10 @@
     <string name="command_mode">Command Mode</string>
     <string name="calibration_position">Position Calibration</string>
     <string name="calibration_admittance">Admittance Calibration</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="DOFs">Degrees of Freedom</string>
+    <string name="home_pos_button">Home Position</string>
+    <string name="welcome">Welcome, </string>
+
 </resources>

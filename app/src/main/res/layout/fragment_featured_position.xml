@@ -35,7 +35,7 @@
             app:contentInsetStart="0dp"
             app:navigationIcon="@drawable/ic_gt_logo_2"
             app:titleTextColor="@color/colorAccent"
-            app:title="@string/calibration_admittance" />
+            app:title="@string/calibration_position" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -98,17 +98,15 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/DOFs"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/command_text"
-                android:textColor="@color/colorAccent">
+                android:layout_below="@+id/command_text">
 
                 <AutoCompleteTextView
                     android:id="@+id/textField"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/DOFs"
                     android:inputType="none"
-                    android:textColor="@color/colorAccent" />
+                    android:hint="@string/DOFs"
+                    android:textColor="@color/test"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,42 +121,35 @@
                 android:layout_below="@+id/test_menu">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/up_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_arrow_circle_up_black_18dp"
+                    android:id="@+id/open_button"
                     style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
-
-                <TextView
-                    android:id="@+id/forceNum"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero"
-                    android:textSize="30sp"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="1.0"/>
+                    android:layout_height="75dp"
+                    android:layout_weight="1.0"
+                    android:text="@string/open"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/down_button"
+                    android:id="@+id/close_button"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_arrow_circle_down_black_18dp"
+                    android:layout_height="75dp"
+                    android:text="@string/close"
                     style="@style/IconOnlyButton"
                     android:layout_weight="1.0"
-                    />
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryDark"/>
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/stop_Button"
+                style="@style/StopButton"
                 android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="200dp"
                 android:layout_below="@+id/up_down_container"
+                android:layout_marginTop="20dp"
                 android:textSize="40dp"
-                android:text="@string/stop"
-                style="@style/StopButton"/>
+                android:text="@string/stop" />
 
             <LinearLayout
                 android:id="@+id/utility_buttons_container"

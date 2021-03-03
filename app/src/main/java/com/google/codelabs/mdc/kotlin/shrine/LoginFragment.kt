@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.shr_login_fragment.*
 import kotlinx.android.synthetic.main.shr_login_fragment.view.*
+import timber.log.Timber
 
 /**
  * Fragment representing the login screen for Shrine.
@@ -27,7 +28,8 @@ class LoginFragment : Fragment() {
                 password_text_input.error = getString(R.string.shr_error_password)
             } else {
                 password_text_input.error = null
-                (activity as NavigationHost).navigateTo(ProductGridFragment(),false)
+                Timber.d("login success")
+                (activity as NavigationHost).navigateTo(PositionCalibration(),false)
             }
         }
 
@@ -38,11 +40,18 @@ class LoginFragment : Fragment() {
             false
         }
 
+
+
+
         return view
     }
 
     // "isPasswordValid" from "Navigate to the next Fragment" section method goes here
     private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 2
+    }
+
+    private fun findUser(text: Editable?): Boolean {
         return text != null && text.length >= 2
     }
 }

@@ -9,6 +9,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.animation.Interpolator
 import android.widget.ImageView
+import timber.log.Timber
 
 /**
  * [android.view.View.OnClickListener] used to translate the product grid sheet downward on
@@ -56,8 +57,10 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
             }
             if (backdropShown) {
                 view.setImageDrawable(closeIcon)
+                Timber.d("menu opened")
             } else {
                 view.setImageDrawable(openIcon)
+                Timber.d("menu closed")
             }
         }
     }

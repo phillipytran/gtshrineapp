@@ -35,7 +35,7 @@
             app:contentInsetStart="0dp"
             app:navigationIcon="@drawable/ic_gt_logo_2"
             app:titleTextColor="@color/colorAccent"
-            app:title="@string/calibration_admittance" />
+            app:title="@string/home" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -80,37 +80,29 @@
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
+
+            <ImageView
+                android:layout_width="128dp"
+                android:layout_height="64dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="16dp"
+                app:srcCompat="@drawable/gt_logo_svg"
+                android:contentDescription="@string/gt_logo_content_description"/>
+
             <TextView
                 android:id="@+id/command_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="@string/commandPlaceholder"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
+                android:text="@string/welcome"
+                android:layout_marginTop="100dp"
+                android:textSize="32dp"
                 android:layout_below="@+id/toggle_button"
                 />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/test_menu"
-                style="@style/DOFSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/DOFs"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/command_text"
-                android:textColor="@color/colorAccent">
 
-                <AutoCompleteTextView
-                    android:id="@+id/textField"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/DOFs"
-                    android:inputType="none"
-                    android:textColor="@color/colorAccent" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/up_down_container"
@@ -119,46 +111,13 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="250dp"
                 android:layout_below="@+id/test_menu">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/up_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_arrow_circle_up_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
 
-                <TextView
-                    android:id="@+id/forceNum"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero"
-                    android:textSize="30sp"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="1.0"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/down_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_arrow_circle_down_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/stop_Button"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/up_down_container"
-                android:textSize="40dp"
-                android:text="@string/stop"
-                style="@style/StopButton"/>
+
 
             <LinearLayout
                 android:id="@+id/utility_buttons_container"
@@ -170,32 +129,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/stop_Button">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/reset_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_cancel_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/undo_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_undo_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/save_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_save_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
 
             </LinearLayout>
 
@@ -203,8 +136,13 @@
                 android:id="@+id/snackbar_view"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:paddingBottom="30dp"
-                android:layout_alignParentBottom="true"/>
+                android:paddingBottom="16dp"
+                android:layout_alignParentBottom="true">
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
         </RelativeLayout>
 

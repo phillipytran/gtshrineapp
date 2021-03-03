@@ -3,6 +3,7 @@ package com.google.codelabs.mdc.kotlin.shrine
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.shr_login_fragment.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity(), NavigationHost {
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity(), NavigationHost {
                     .add(R.id.container, LoginFragment())
                     .commit()
         }
+
 
         Timber.plant(Timber.DebugTree())
     }

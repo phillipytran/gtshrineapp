@@ -11,10 +11,19 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_featured.view.*
+import kotlinx.android.synthetic.main.fragment_featured.view.command_text
+import kotlinx.android.synthetic.main.fragment_featured.view.grid
+import kotlinx.android.synthetic.main.fragment_featured.view.save_button
+import kotlinx.android.synthetic.main.fragment_featured.view.save_progress
+import kotlinx.android.synthetic.main.fragment_featured.view.snackbar_view
+import kotlinx.android.synthetic.main.fragment_featured.view.stop_Button
+import kotlinx.android.synthetic.main.fragment_featured.view.textField
+import kotlinx.android.synthetic.main.fragment_featured.view.toggle_button
+import kotlinx.android.synthetic.main.fragment_featured_position.view.*
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
 import timber.log.Timber
 
-class FeaturedFragment : Fragment() {
+class PositionCalibration : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +34,7 @@ class FeaturedFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_featured, container, false)
+        val view =  inflater.inflate(R.layout.fragment_featured_position, container, false)
 
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
         view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
@@ -35,8 +44,7 @@ class FeaturedFragment : Fragment() {
                 ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_2), // Menu open icon
                 ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
-
-        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb CMC", "Thumb MCP")
+        val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb CMC", "Thumb MCP", "Index Ext", "Middle Ext", "Thumb CMC Ext", "Thumb Ext")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
         view.textField.setAdapter(adapter)
 
@@ -44,7 +52,7 @@ class FeaturedFragment : Fragment() {
             Timber.d("Selected item is: ${items[i]}")
         }
 
-        view.toggle_button.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        view.toggle_button.addOnButtonCheckedListener {group, checkedId, isChecked ->
             if (isChecked) {
                 Timber.d("Checked")
                 view.command_text.setText(R.string.checked)
@@ -54,13 +62,16 @@ class FeaturedFragment : Fragment() {
             }
         }
 
-        view.up_button.setOnClickListener{
-            Timber.d("Up button pressed")
+        view.stop_Button.setOnClickListener{
+            Timber.d("Stop button pressed")
         }
-
-        view.down_button.setOnClickListener {
+        view.open_button.setOnClickListener{
+            Timber.d("Open button pressed")
+        }
+        view.close_button.setOnClickListener{
             Timber.d("Close button pressed")
         }
+
 
         val snackBarView = view.snackbar_view
         view.save_button.setOnClickListener {
@@ -80,9 +91,9 @@ class FeaturedFragment : Fragment() {
     }
 
     //override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
-    //    Timber.d("Hello")
-    //    menuInflater.inflate(R.menu.shr_toolbar_menu, menu)
-    //   super.onCreateOptionsMenu(menu, menuInflater)
+      //  Timber.d("Hello")
+        //menuInflater.inflate(R.menu.shr_toolbar_menu, menu)
+        //super.onCreateOptionsMenu(menu, menuInflater)
     //}
 
 }

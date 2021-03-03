@@ -35,7 +35,7 @@
             app:contentInsetStart="0dp"
             app:navigationIcon="@drawable/ic_gt_logo_2"
             app:titleTextColor="@color/colorAccent"
-            app:title="@string/calibration_admittance" />
+            app:title="@string/command_mode" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -86,31 +86,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="@string/commandPlaceholder"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:textSize="32dp"
                 android:layout_below="@+id/toggle_button"
                 />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/test_menu"
-                style="@style/DOFSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/DOFs"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/command_text"
-                android:textColor="@color/colorAccent">
 
-                <AutoCompleteTextView
-                    android:id="@+id/textField"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/DOFs"
-                    android:inputType="none"
-                    android:textColor="@color/colorAccent" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/up_down_container"
@@ -119,7 +100,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="250dp"
                 android:layout_below="@+id/test_menu">
 
                 <com.google.android.material.button.MaterialButton
@@ -152,13 +133,28 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/stop_Button"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:layout_marginTop="20dp"
+                style="@style/StopButton"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:layout_below="@+id/up_down_container"
-                android:textSize="40dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/stop"
-                style="@style/StopButton"/>
+                android:textSize="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/home_pos_button"
+                style="@style/HomePosButton"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_below="@+id/up_down_container"
+                android:layout_alignLeft="@+id/stop_Button"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="20dp"
+
+                android:text="@string/home_pos_button"
+                android:textSize="24dp" />
 
             <LinearLayout
                 android:id="@+id/utility_buttons_container"
@@ -169,6 +165,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/stop_Button">
+
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/reset_button"
@@ -203,8 +200,13 @@
                 android:id="@+id/snackbar_view"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:paddingBottom="30dp"
-                android:layout_alignParentBottom="true"/>
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="16dp">
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
         </RelativeLayout>
 

@@ -27,6 +27,8 @@
         <item name="android:stateListAnimator" tools:ignore="NewApi">@animator/shr_next_button_state_list_anim</item>
     </style>
 
+
+
     <style name="Widget.Shrine.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
@@ -38,7 +40,7 @@
     </style>
 
     <style name="Widget.Shrine.Toolbar" parent="Widget.AppCompat.Toolbar">
-        <item name="android:background">?attr/colorAccent</item>
+        <item name="android:background">?attr/colorPrimary</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="titleTextAppearance">@style/TextAppearance.Shrine.Toolbar</item>
@@ -61,7 +63,7 @@
     </style>
 
     <style name="Testing" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">@color/textColorWhite</item>
     </style>
 
     <style name="IconOnlyButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -83,11 +85,20 @@
         <item name="android:textAppearance">@style/TextAppearance.Shrine.Title</item>
     </style>
 
+    <style name="HomePosButton" parent="Widget.MaterialComponents.Button">
+        <item name="rippleColor">?colorOnPrimary</item>
+        <item name="backgroundTint">@color/home_pos_button</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.Title</item>
+    </style>
+
     <style name="DOFSpinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="SaveProgressIndicator" parent="Widget.MaterialComponents.LinearProgressIndicator">
         <item name="indicatorColor">@color/toolbarIconColor</item>
     </style>
+
+
 </resources>

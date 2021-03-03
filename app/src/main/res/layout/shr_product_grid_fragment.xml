@@ -7,6 +7,7 @@
     tools:context=".ProductGridFragment">
 
     <LinearLayout
+        android:id="@+id/test69"
         style="@style/Widget.Shrine.Backdrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,8 +34,8 @@
             android:paddingEnd="12dp"
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
-            app:navigationIcon="@drawable/shr_branded_menu"
-            app:title="@string/shr_app_name" />
+            app:navigationIcon="@drawable/ic_gt_logo_2"
+            app:title="@string/gt_app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
