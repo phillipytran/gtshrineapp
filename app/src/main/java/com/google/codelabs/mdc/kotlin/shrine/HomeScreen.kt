@@ -49,7 +49,7 @@ class HomeScreen : Fragment() {
         }
 
 
-
+        /*
         val snackBarView = view.snackbar_view
         view.save_button.setOnClickListener {
             view.save_progress.visibility = View.VISIBLE
@@ -62,7 +62,7 @@ class HomeScreen : Fragment() {
                         .show()
                 view.save_progress.visibility = View.INVISIBLE
             }, 3000)
-        }
+        }*/
 
         return view
     }

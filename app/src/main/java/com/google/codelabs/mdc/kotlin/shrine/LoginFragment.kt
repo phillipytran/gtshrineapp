@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_featured.view.*
 import kotlinx.android.synthetic.main.shr_login_fragment.*
 import kotlinx.android.synthetic.main.shr_login_fragment.view.*
 import timber.log.Timber
@@ -23,14 +24,17 @@ class LoginFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.shr_login_fragment, container, false)
 
+
+
         view.next_button.setOnClickListener {
             if (!isPasswordValid(password_edit_text.text!!)) {
                 password_text_input.error = getString(R.string.shr_error_password)
             } else {
                 password_text_input.error = null
                 Timber.d("login success")
-                (activity as NavigationHost).navigateTo(PositionCalibration(),false)
+                (activity as NavigationHost).navigateTo(HomeScreen(),false)
             }
+            Timber.d("Username: "+ view.username_text_input.text!!)
         }
 
         view.password_edit_text.setOnKeyListener { _, _, _ ->
