@@ -57,6 +57,11 @@ class ProductGridFragment : Fragment() {
             Timber.d("FUCK")
             (activity as NavigationHost).navigateTo(FeaturedFragment(),false)
         }
+
+        view.command_mode_switcher.setOnClickListener {
+            Timber.d("FUCK2")
+            (activity as NavigationHost).navigateTo(TestFragment(),false)
+        }
         return view
     }
 

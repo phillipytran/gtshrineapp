@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_featured.view.*
-import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
+import kotlinx.android.synthetic.main.shr_backdrop.view.*
 import timber.log.Timber
 
 class FeaturedFragment : Fragment() {
@@ -27,8 +27,8 @@ class FeaturedFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_featured, container, false)
 
-        (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
-        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+        (activity as AppCompatActivity).setSupportActionBar(view.app_bar_featured)
+        view.app_bar_featured.setNavigationOnClickListener(NavigationIconClickListener(
                 activity!!,
                 view.grid,
                 AccelerateDecelerateInterpolator(),
@@ -73,6 +73,16 @@ class FeaturedFragment : Fragment() {
                         .show()
                 view.save_progress.visibility = View.INVISIBLE
             }, 3000)
+        }
+
+        view.command_mode_switcher.setOnClickListener {
+            Timber.d("FUCK3")
+            (activity as NavigationHost).navigateTo(TestFragment(),false)
+        }
+
+        view.adm_cal_switcher.setOnClickListener {
+            Timber.d("FUCK5")
+            (activity as NavigationHost).navigateTo(ProductGridFragment(),false)
         }
 
         return view
