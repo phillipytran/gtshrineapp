@@ -89,7 +89,7 @@
 
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="189dp"
-                android:layout_marginRight="258dp"
+
                 android:layout_marginBottom="0dp"
                 android:text="@string/shr_button_register" />
 
@@ -103,7 +103,7 @@
                 android:layout_below="@+id/register_button"
                 android:layout_centerHorizontal="@+id/register_button"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="0dp"
+
                 android:text="@string/reset_text_button" />
 
         </RelativeLayout>

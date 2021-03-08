@@ -1,5 +1,6 @@
 package com.google.codelabs.mdc.kotlin.shrine
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import timber.log.Timber
  */
 class LoginFragment : Fragment() {
 
+    @SuppressLint("BinaryOperationInTimber")
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
