@@ -1,4 +1,5 @@
-<resources xmlns:android="http://schemas.android.com/tools" xmlns:tools="http://schemas.android.com/apk/res-auto">
+<resources xmlns:android="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/apk/res-auto">
 
     <!-- Base application theme. -->
     <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -93,7 +94,10 @@
 
     <style name="DOFSpinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="colorPrimary">@color/colorAccent</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="hintTextColor">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorPrimaryDark</item>
+
     </style>
 
     <style name="SaveProgressIndicator" parent="Widget.MaterialComponents.LinearProgressIndicator">

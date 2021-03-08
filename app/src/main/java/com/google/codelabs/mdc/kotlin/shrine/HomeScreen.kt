@@ -1,17 +1,16 @@
 package com.google.codelabs.mdc.kotlin.shrine
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_featured.view.*
-import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.*
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.command_text_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.toggle_button_adm
+import kotlinx.android.synthetic.main.home_screen.view.*
+import kotlinx.android.synthetic.main.shr_backdrop.view.*
 import timber.log.Timber
 
 class HomeScreen : Fragment() {
@@ -27,24 +26,29 @@ class HomeScreen : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.home_screen, container, false)
 
-        (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
-        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+        (activity as AppCompatActivity).setSupportActionBar(view.home_app_bar)
+        view.home_app_bar.setNavigationOnClickListener(NavigationIconClickListener(
                 activity!!,
-                view.grid,
+                view.grid_home,
                 AccelerateDecelerateInterpolator(),
-                ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_2), // Menu open icon
+                ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_3), // Menu open icon
                 ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
 
+        view.sign_out_button.setOnClickListener {
+            Timber.d("Navigating to Login Screen")
+            (activity as NavigationHost).navigateTo(LoginFragment(),false)
+
+        }
 
 
-        view.toggle_button.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        view.toggle_button_home.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (isChecked) {
                 Timber.d("Checked")
-                view.command_text.setText(R.string.checked)
+                view.command_text_home.setText(R.string.checked)
             } else {
                 Timber.d("Unchecked")
-                view.command_text.text = getText(R.string.unchecked)
+                view.command_text_home.text = getText(R.string.unchecked)
             }
         }
 
@@ -63,6 +67,27 @@ class HomeScreen : Fragment() {
                 view.save_progress.visibility = View.INVISIBLE
             }, 3000)
         }*/
+
+        /*view.home_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating Home")
+            (activity as NavigationHost).navigateTo(HomeScreen(),false)
+        }*/
+        view.pos_cal_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Position Calibration")
+            (activity as NavigationHost).navigateTo(PositionCalibration(),false)
+        }
+        view.adm_cal_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Admittance Calibration")
+            (activity as NavigationHost).navigateTo(AdmittanceCalibration(),false)
+        }
+        view.command_mode_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Command Screen")
+            (activity as NavigationHost).navigateTo(CommandMode(),false)
+        }
 
         return view
     }

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_featured.view.*
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.*
 import kotlinx.android.synthetic.main.shr_login_fragment.*
 import kotlinx.android.synthetic.main.shr_login_fragment.view.*
 import timber.log.Timber
@@ -43,6 +43,15 @@ class LoginFragment : Fragment() {
             }
             false
         }
+
+
+
+        view.clear_button.setOnClickListener {
+            username_text_input.text?.clear()
+            password_edit_text.text?.clear()
+
+        }
+
 
 
 

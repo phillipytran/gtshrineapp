@@ -10,17 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_featured.view.*
-import kotlinx.android.synthetic.main.fragment_featured.view.command_text
-import kotlinx.android.synthetic.main.fragment_featured.view.grid
-import kotlinx.android.synthetic.main.fragment_featured.view.save_button
-import kotlinx.android.synthetic.main.fragment_featured.view.save_progress
-import kotlinx.android.synthetic.main.fragment_featured.view.snackbar_view
-import kotlinx.android.synthetic.main.fragment_featured.view.stop_Button
-import kotlinx.android.synthetic.main.fragment_featured.view.textField
-import kotlinx.android.synthetic.main.fragment_featured.view.toggle_button
-import kotlinx.android.synthetic.main.fragment_featured_position.view.*
-import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.*
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.command_text_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.grid_adm_cal
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.save_button_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.save_progress_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.snackbar_view_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.stop_Button_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.textField_adm
+import kotlinx.android.synthetic.main.admittance_cal_screen.view.toggle_button_adm
+import kotlinx.android.synthetic.main.position_cal_screen.view.*
+import kotlinx.android.synthetic.main.shr_backdrop.view.*
 import timber.log.Timber
 
 class PositionCalibration : Fragment() {
@@ -34,48 +34,51 @@ class PositionCalibration : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_featured_position, container, false)
+        val view =  inflater.inflate(R.layout.position_cal_screen, container, false)
 
-        (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
-        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+        (activity as AppCompatActivity).setSupportActionBar(view.pos_cal_app_bar)
+        view.pos_cal_app_bar.setNavigationOnClickListener(NavigationIconClickListener(
                 activity!!,
-                view.grid,
+                view.grid_pos_cal,
                 AccelerateDecelerateInterpolator(),
-                ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_2), // Menu open icon
+                ContextCompat.getDrawable(context!!, R.drawable.ic_gt_logo_3), // Menu open icon
                 ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu)))
 
         val items = listOf("Index MCP", "Index PIP", "Middle", "Thumb Abduction", "Thumb Flex", "Index Ext", "Middle Ext", "Thumb Adduction", "Thumb Ext")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
-        view.textField.setAdapter(adapter)
+        view.textField_pos.setAdapter(adapter)
 
-        view.textField.setOnItemClickListener { adapterView, view, i, l ->
+        view.textField_pos.setOnItemClickListener { adapterView, view, i, l ->
             Timber.d("Selected item is: ${items[i]}")
         }
 
-        view.toggle_button.addOnButtonCheckedListener {group, checkedId, isChecked ->
+        view.toggle_button_pos.addOnButtonCheckedListener {group, checkedId, isChecked ->
             if (isChecked) {
                 Timber.d("Checked")
-                view.command_text.setText(R.string.checked)
+                view.command_text_pos.setText(R.string.checked)
             } else {
                 Timber.d("Unchecked")
-                view.command_text.text = getText(R.string.unchecked)
+                view.command_text_pos.text = getText(R.string.unchecked)
             }
         }
 
-        view.stop_Button.setOnClickListener{
+        view.stop_Button_pos.setOnClickListener{
             Timber.d("Stop button pressed")
         }
-        view.open_button.setOnClickListener{
+        view.open_button_pos.setOnClickListener{
             Timber.d("Open button pressed")
         }
-        view.close_button.setOnClickListener{
+        view.close_button_pos.setOnClickListener{
             Timber.d("Close button pressed")
+        }
+        view.transfer_button_pos.setOnClickListener{
+            Timber.d("Transfer button pressed")
         }
 
 
-        val snackBarView = view.snackbar_view
-        view.save_button.setOnClickListener {
-            view.save_progress.visibility = View.VISIBLE
+        val snackBarView = view.snackbar_view_pos
+        view.save_button_pos.setOnClickListener {
+            view.save_progress_pos.visibility = View.VISIBLE
             val saveHandler = Handler(Looper.getMainLooper())
             saveHandler.postDelayed({
                 Snackbar.make(snackBarView, "Saved", Snackbar.LENGTH_SHORT)
@@ -83,8 +86,30 @@ class PositionCalibration : Fragment() {
 
                         }
                         .show()
-                view.save_progress.visibility = View.INVISIBLE
+                view.save_progress_pos.visibility = View.INVISIBLE
             }, 3000)
+        }
+
+
+        view.home_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating Home")
+            (activity as NavigationHost).navigateTo(HomeScreen(),false)
+        }
+        /*view.pos_cal_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Position Calibration")
+            (activity as NavigationHost).navigateTo(PositionCalibration(),false)
+        }*/
+        view.adm_cal_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Admittance Calibration")
+            (activity as NavigationHost).navigateTo(AdmittanceCalibration(),false)
+        }
+        view.command_mode_switcher.setOnClickListener{
+            //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
+            Timber.d("Navigating to Command Screen")
+            (activity as NavigationHost).navigateTo(CommandMode(),false)
         }
 
         return view

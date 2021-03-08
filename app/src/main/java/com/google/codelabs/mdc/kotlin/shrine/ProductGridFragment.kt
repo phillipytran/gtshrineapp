@@ -3,7 +3,6 @@ package com.google.codelabs.mdc.kotlin.shrine
 import android.os.Bundle
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.codelabs.mdc.kotlin.shrine.network.ProductEntry
 import com.google.codelabs.mdc.kotlin.shrine.staggeredgridlayout.StaggeredProductCardRecyclerViewAdapter
 import kotlinx.android.synthetic.main.shr_backdrop.view.*
-import kotlinx.android.synthetic.main.shr_product_grid_fragment.*
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.*
 import timber.log.Timber
 
@@ -55,10 +53,10 @@ class ProductGridFragment : Fragment() {
         view.product_grid.background = context?.getDrawable(R.drawable.shr_product_grid_background_shape)
 
 
-        view.test69.pos_cal_switcher.setOnClickListener{
+        view.home_switcher.setOnClickListener{
             //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
             Timber.d("FUCK")
-            (activity as NavigationHost).navigateTo(FeaturedFragment(),false)
+            (activity as NavigationHost).navigateTo(AdmittanceCalibration(),false)
         }
         view.pos_cal_switcher.setOnClickListener{
             //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
@@ -68,12 +66,12 @@ class ProductGridFragment : Fragment() {
         view.adm_cal_switcher.setOnClickListener{
             //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
             Timber.d("Navigating to Admittance Calibration")
-            (activity as NavigationHost).navigateTo(FeaturedFragment(),false)
+            (activity as NavigationHost).navigateTo(AdmittanceCalibration(),false)
         }
         view.command_mode_switcher.setOnClickListener{
             //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))
             Timber.d("FUCK")
-            (activity as NavigationHost).navigateTo(FeaturedFragment(),false)
+            (activity as NavigationHost).navigateTo(AdmittanceCalibration(),false)
         }
         return view
     }

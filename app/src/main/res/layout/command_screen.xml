@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeaturedFragment">
+    tools:context=".AdmittanceCalibration">
 
     <LinearLayout
         style="@style/Widget.Shrine.Backdrop"
@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:paddingTop="100dp"
         android:paddingBottom="100dp">
-
         <include layout="@layout/shr_backdrop" />
     </LinearLayout>
 
@@ -24,7 +23,7 @@
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/app_bar"
+            android:id="@+id/command_mode_app_bar"
             style="@style/Widget.Shrine.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -33,13 +32,13 @@
             android:paddingEnd="12dp"
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
-            app:navigationIcon="@drawable/ic_gt_logo_2"
+            app:navigationIcon="@drawable/ic_gt_logo_3"
             app:titleTextColor="@color/colorAccent"
             app:title="@string/command_mode" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/grid"
+        android:id="@+id/grid_command_mode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
@@ -54,7 +53,7 @@
             android:paddingBottom="20dp">
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/save_progress"
+                android:id="@+id/save_progress_com"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:indeterminate="true"
@@ -62,49 +61,72 @@
                 android:visibility="invisible"/>
 
             <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_button"
+                android:id="@+id/toggle_button_com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="20dp">
 
                 <Button
-                    android:id="@+id/command_button"
+                    android:id="@+id/command_button_com"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/commandText"
+                    android:layout_marginStart="30dp"
                     android:backgroundTint="@color/toggle_button"
                     android:textColor="@color/toggle_text"
                     app:icon="@drawable/ic_record_voice_over_black_18dp"
                     app:iconTint="@color/icon_button"/>
 
+
+
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
-            <TextView
-                android:id="@+id/command_text"
+            <LinearLayout
+                android:id="@+id/transfer_button_container_com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/commandPlaceholder"
-                android:layout_marginTop="30dp"
-                android:textSize="32dp"
-                android:layout_below="@+id/toggle_button"
-                />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:layout_below="@+id/toggle_button_com"
+                android:layout_marginTop="0dp">
+
+                <TextView
+                    android:id="@+id/command_text_com"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/commandPlaceholder"
+                    android:layout_marginTop="0dp"
+                    android:textSize="28sp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/transfer_button_com"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/toggle_button"
+                    android:text="@string/transfer"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
 
 
 
             <LinearLayout
-                android:id="@+id/up_down_container"
+                android:id="@+id/up_down_container_com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="250dp"
-                android:layout_below="@+id/test_menu">
+                android:layout_marginTop="150dp"
+                android:layout_below="@+id/toggle_button_com">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/up_button"
+                    android:id="@+id/up_button_com"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:icon="@drawable/ic_arrow_circle_up_black_18dp"
@@ -113,7 +135,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/forceNum"
+                    android:id="@+id/forceNum_com"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/zero"
@@ -122,7 +144,7 @@
                     android:layout_weight="1.0"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/down_button"
+                    android:id="@+id/down_button_com"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:icon="@drawable/ic_arrow_circle_down_black_18dp"
@@ -131,81 +153,38 @@
                     />
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/stop_Button"
-                style="@style/StopButton"
-                android:layout_width="165dp"
-                android:layout_height="165dp"
-                android:layout_below="@+id/up_down_container"
-                android:layout_marginTop="20dp"
-                android:text="@string/stop"
-                android:textSize="24dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/home_pos_button"
-                style="@style/HomePosButton"
-                android:layout_width="165dp"
-                android:layout_height="165dp"
-                android:layout_below="@+id/up_down_container"
-                android:layout_alignLeft="@+id/stop_Button"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="200dp"
-                android:layout_marginTop="20dp"
-
-                android:text="@string/home_pos_button"
-                android:textSize="24dp" />
-
             <LinearLayout
-                android:id="@+id/utility_buttons_container"
+                android:id="@+id/stop_home_container_com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/stop_Button">
+                android:layout_below="@+id/up_down_container_com">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/stop_Button_com"
+                style="@style/StopButton"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="0dp"
+                android:text="@string/stop"
+                android:layout_weight="1.0"
+                android:textSize="40sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/reset_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_cancel_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/undo_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_undo_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/save_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_save_black_18dp"
-                    style="@style/IconOnlyButton"
-                    android:layout_weight="1.0"
-                    />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/home_pos_button_com"
+                style="@style/HomePosButton"
+                android:layout_width="0dp"
+                android:layout_weight="1.0"
+                android:layout_height="300dp"
+                android:layout_marginStart="0dp"
+                android:text="@string/home"
+                android:textSize="40sp" />
 
             </LinearLayout>
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:id="@+id/snackbar_view"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
-                android:paddingBottom="16dp">
-
-
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
         </RelativeLayout>

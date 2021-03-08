@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeaturedFragment">
+    tools:context=".AdmittanceCalibration">
 
     <LinearLayout
         style="@style/Widget.Shrine.Backdrop"
@@ -24,7 +24,7 @@
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/app_bar"
+            android:id="@+id/home_app_bar"
             style="@style/Widget.Shrine.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -33,13 +33,13 @@
             android:paddingEnd="12dp"
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
-            app:navigationIcon="@drawable/ic_gt_logo_2"
+            app:navigationIcon="@drawable/ic_gt_logo_3"
             app:titleTextColor="@color/colorAccent"
             app:title="@string/home" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/grid"
+        android:id="@+id/grid_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
@@ -47,29 +47,51 @@
         android:elevation="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="0dp"
             android:paddingBottom="20dp">
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/save_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:indeterminate="true"
-                style="@style/SaveProgressIndicator"
-                android:visibility="invisible"/>
+
+
+            <LinearLayout
+                android:id="@+id/sign_out_container"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="0dp"
+                >
+
+
+                <Button
+                    android:id="@+id/sign_out_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="250dp"
+
+                    android:backgroundTint="@color/toggle_button"
+                    android:text="@string/signOutText"
+                    android:textColor="@color/toggle_text" />
+
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_button"
+                android:id="@+id/toggle_button_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="20dp">
+                android:layout_below="@id/sign_out_container"
+                android:layout_margin="0dp">
 
                 <Button
-                    android:id="@+id/command_button"
+                    android:id="@+id/command_button_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/commandText"
@@ -78,78 +100,62 @@
                     app:icon="@drawable/ic_record_voice_over_black_18dp"
                     app:iconTint="@color/icon_button"/>
 
+
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
-
-            <ImageView
-                android:layout_width="128dp"
-                android:layout_height="64dp"
-
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="150dp"
-                android:layout_marginBottom="16dp"
-                app:srcCompat="@drawable/gt_logo_svg"
-                android:contentDescription="@string/gt_logo_content_description"/>
-
             <TextView
-                android:id="@+id/command_text"
+                android:id="@+id/command_text_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="@string/commandPlaceholder"
-                android:layout_marginTop="10dp"
-                android:textSize="12dp"
-                android:layout_below="@+id/toggle_button"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/toggle_button_home"
                 />
+
+            <ImageView
+                android:id="@+id/gt_logo_home"
+                android:layout_width="128dp"
+                android:layout_height="64dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="16dp"
+                app:srcCompat="@drawable/gt_logo_svg"
+                android:layout_below="@id/command_text_home"
+                android:contentDescription="@string/gt_logo_content_description"/>
+
             <TextView
-                android:id="@+id/welcome_text"
+                android:id="@+id/welcome_text_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="@string/welcome"
-                android:layout_marginTop="150dp"
-                android:textSize="32dp"
-                android:layout_below="@+id/toggle_button"
+                android:layout_marginTop="10dp"
+
+                android:textSize="32sp"
+                android:layout_below="@+id/gt_logo_home"
                 />
 
 
             <LinearLayout
-                android:id="@+id/up_down_container"
+                android:id="@+id/up_down_container_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:orientation="horizontal"
                 android:layout_marginTop="250dp"
-                android:layout_below="@+id/test_menu">
+                android:layout_below="@+id/welcome_text_home">
 
 
             </LinearLayout>
 
 
 
-            <LinearLayout
-                android:id="@+id/utility_buttons_container"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/stop_Button">
 
 
-            </LinearLayout>
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:id="@+id/snackbar_view"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:paddingBottom="16dp"
-                android:layout_alignParentBottom="true">
-
-
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

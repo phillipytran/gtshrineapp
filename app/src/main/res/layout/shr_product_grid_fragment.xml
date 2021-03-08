@@ -34,7 +34,7 @@
             android:paddingEnd="12dp"
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
-            app:navigationIcon="@drawable/ic_gt_logo_2"
+            app:navigationIcon="@drawable/ic_gt_logo_3"
             app:title="@string/gt_app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
