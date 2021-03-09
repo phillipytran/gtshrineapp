@@ -71,9 +71,6 @@ class PositionCalibration : Fragment() {
         view.close_button_pos.setOnClickListener{
             Timber.d("Close button pressed")
         }
-        view.transfer_button_pos.setOnClickListener{
-            Timber.d("Transfer button pressed")
-        }
 
 
         val snackBarView = view.snackbar_view_pos

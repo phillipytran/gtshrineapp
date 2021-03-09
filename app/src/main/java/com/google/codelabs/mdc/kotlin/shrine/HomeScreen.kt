@@ -42,7 +42,7 @@ class HomeScreen : Fragment() {
         }
 
 
-        view.toggle_button_home.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        /*view.toggle_button_home.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (isChecked) {
                 Timber.d("Checked")
                 view.command_text_home.setText(R.string.checked)
@@ -50,7 +50,7 @@ class HomeScreen : Fragment() {
                 Timber.d("Unchecked")
                 view.command_text_home.text = getText(R.string.unchecked)
             }
-        }
+        }*/
 
 
         /*

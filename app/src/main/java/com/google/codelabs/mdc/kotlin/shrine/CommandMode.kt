@@ -65,12 +65,6 @@ class CommandMode : Fragment() {
         view.home_pos_button_com.setOnClickListener{
             Timber.d("Home position button pressed")
         }
-        view.transfer_button_com.setOnClickListener{
-            Timber.d("Transfer button pressed")
-        }
-
-
-
 
         view.home_switcher.setOnClickListener{
             //view.featured_label.setTextColor(ContextCompat.getColor(context!!,R.color.test))

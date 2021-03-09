@@ -100,15 +100,23 @@
                     android:textSize="28sp"
                     />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/transfer_button_adm"
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/verify_button_adm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/toggle_button"
-                    android:text="@string/transfer"
-                    android:textColor="@color/colorPrimary"/>
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp">
+
+                    <Button
+                        android:id="@+id/verify_toggle_adm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/toggle_button"
+                        android:text="@string/verify"
+                        android:textColor="@color/colorPrimary" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout

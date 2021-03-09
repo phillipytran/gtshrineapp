@@ -63,9 +63,7 @@ class AdmittanceCalibration : Fragment() {
         view.down_button_adm.setOnClickListener {
             Timber.d("Close button pressed")
         }
-        view.transfer_button_adm.setOnClickListener{
-            Timber.d("Transfer button pressed")
-        }
+
         view.stop_Button_adm.setOnClickListener{
             Timber.d("Stop button pressed")
         }
