@@ -27,6 +27,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
             style="@style/Widget.Shrine.Toolbar"
+
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:paddingStart="12dp"
@@ -35,7 +36,9 @@
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
             app:navigationIcon="@drawable/ic_gt_logo_3"
-            app:title="@string/gt_app_name" />
+            app:title="@string/gt_app_name"
+            app:titleTextColor="@color/colorAccent"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView

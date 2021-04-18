@@ -21,7 +21,7 @@ class StaggeredProductCardRecyclerViewAdapter(private val productList: List<Prod
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StaggeredProductCardViewHolder {
         var layoutId = R.layout.shr_staggered_product_card_first
         if (viewType == 1) {
-            layoutId = R.layout.shr_staggered_product_card_second
+            layoutId = R.layout.shr_staggered_product_card_third
         } else if (viewType == 2) {
             layoutId = R.layout.shr_staggered_product_card_third
         }

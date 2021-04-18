@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
             } else {
                 password_text_input.error = null
                 Timber.d("login success")
-                (activity as NavigationHost).navigateTo(HomeScreen(),false)
+                (activity as NavigationHost).navigateTo(ProductGridFragment(),false)
             }
             Timber.d("Username: "+ view.username_text_input.text!!)
         }
